@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Enter a username</title>
+	</head>
+	<body>
+		<h2>Please enter a username</h2>
+		{% if messages%}
+		{% for message in messages %}
+			<p>{{message}}</p>
+		{% endfor %}
+		{% endif %}
+		<form  action="add_user" method="post">
+			{% csrf_token %}
+			<label for="username">Username</label>
+			<input type="text" name="username" value="">
+			<button type="submit" name="button">Submit</button>
+
+		</form>
+	</body>
+</html>
